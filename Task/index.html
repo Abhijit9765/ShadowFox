@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chennai Super Kings - Fan Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to your custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#1a1a2e]">
+
+    <!-- Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#1a1a2e] bg-opacity-90 backdrop-blur-sm shadow-md py-4">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#" class="flex items-center space-x-2 text-2xl font-bold text-[#fecb00] drop-shadow-lg">
+                <img src="data:image/png;base64,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" alt="Team Logo" class="w-10 h-10 rounded-full">
+                <span>CSK Fan Hub</span>
+            </a>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#schedule" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Schedule</a>
+                <a href="#players" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Players</a>
+                <a href="#stats" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Stats</a>
+                <a href="#news" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">News</a>
+                <a href="#fan-zone" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Fan Zone</a>
+            </div>
+            <!-- Mobile Navigation Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu (initially hidden) -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 px-4 space-y-2">
+            <a href="#schedule" class="block py-2 px-4 rounded-lg hover:bg-[#2a2a44]">Schedule</a>
+            <a href="#players" class="block py-2 px-4 rounded-lg hover:bg-[#2a2a44]">Players</a>
+            <a href="#stats" class="block py-2 px-4 rounded-lg hover:bg-[#2a2a44]">Stats</a>
+            <a href="#news" class="block py-2 px-4 rounded-lg hover:bg-[#2a2a44]">News</a>
+            <a href="#fan-zone" class="block py-2 px-4 rounded-lg hover:bg-[#2a2a44]">Fan Zone</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-20 md:py-32 text-center fade-in-section">
+            <div class="max-w-4xl mx-auto">
+                <img src="data:image/png;base64,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" alt="Team Crest"
+                    class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-[#fecb00] shadow-lg">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    Welcome to the <span class="text-[#fecb00] drop-shadow-md">CSK</span> Fan Hub
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-300">
+                    The official unofficial destination for all things Yellow!
+                </p>
+            </div>
+        </section>
+
+        <!-- Match Schedule Section -->
+        <section id="schedule" class="py-16 md:py-24 fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#fecb00] mb-12">Match Schedule</h2>
+            <div class="max-w-4xl mx-auto bg-[#2a2a44] p-8 rounded-2xl shadow-xl overflow-x-auto">
+                <table class="min-w-full text-left text-gray-300">
+                    <thead class="border-b-2 border-gray-600">
+                        <tr>
+                            <th class="px-4 py-2 font-medium">Date</th>
+                            <th class="px-4 py-2 font-medium">Opponent</th>
+                            <th class="px-4 py-2 font-medium">Venue</th>
+                            <th class="px-4 py-2 font-medium">Time (IST)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700 hover:bg-[#3a3a5e] transition-colors duration-200">
+                            <td class="px-4 py-3">May 10, 2024</td>
+                            <td class="px-4 py-3">vs MI</td>
+                            <td class="px-4 py-3">Wankhede Stadium, Mumbai</td>
+                            <td class="px-4 py-3">7:30 PM</td>
+                        </tr>
+                        <tr class="border-b border-gray-700 hover:bg-[#3a3a5e] transition-colors duration-200">
+                            <td class="px-4 py-3">May 15, 2024</td>
+                            <td class="px-4 py-3">vs RCB</td>
+                            <td class="px-4 py-3">M. Chinnaswamy Stadium, Bengaluru</td>
+                            <td class="px-4 py-3">7:30 PM</td>
+                        </tr>
+                        <tr class="border-b border-gray-700 hover:bg-[#3a3a5e] transition-colors duration-200">
+                            <td class="px-4 py-3">May 20, 2024</td>
+                            <td class="px-4 py-3">vs KKR</td>
+                            <td class="px-4 py-3">Eden Gardens, Kolkata</td>
+                            <td class="px-4 py-3">3:30 PM</td>
+                        </tr>
+                        <tr class="hover:bg-[#3a3a5e] transition-colors duration-200">
+                            <td class="px-4 py-3">May 25, 2024</td>
+                            <td class="px-4 py-3">vs RR</td>
+                            <td class="px-4 py-3">Sawai Mansingh Stadium, Jaipur</td>
+                            <td class="px-4 py-3">7:30 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Player Profiles Section -->
+        <section id="players" class="py-16 md:py-24 fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#fecb00] mb-12">CSK Squad</h2>
+
+            <!-- Top 5 Players Section -->
+            <div id="top-players-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-8">
+                <!-- Player Card 1 - MS Dhoni -->
+                <a href="player.html?id=1" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/57.png" alt="MS Dhoni" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">MS Dhoni</h3>
+                        <p class="text-sm text-gray-300">Wicket-keeper / Batsman</p>
+                    </div>
+                </a>
+                <!-- Player Card 2 - Ravindra Jadeja -->
+                <a href="player.html?id=2" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/46.png" alt="Ravindra Jadeja" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Ravindra Jadeja</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+                <!-- Player Card 3 - Devon Conway -->
+                <a href="player.html?id=3" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://documents.iplt20.com/ipl/IPLHeadshot2025/601.png" alt="Devon Conway" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Devon Conway</h3>
+                        <p class="text-sm text-gray-300">Batsman</p>
+                    </div>
+                </a>
+                <!-- Player Card 4 - Moeen Ali -->
+                <a href="player.html?id=4" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/206.png" alt="Moeen Ali" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Moeen Ali</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+                <!-- Player Card 5 - Ruturaj Gaikwad -->
+                <a href="player.html?id=5" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://documents.iplt20.com/ipl/IPLHeadshot2024/102.png" alt="Ruturaj Gaikwad" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Ruturaj Gaikwad</h3>
+                        <p class="text-sm text-gray-300">Batsman</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Rest of the Players Section (Initially Hidden) -->
+            <div id="hidden-players-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 hidden">
+                <!-- Player Card 6 - Deepak Chahar -->
+                <a href="player.html?id=6" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Deepak+Chahar" alt="Deepak Chahar" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Deepak Chahar</h3>
+                        <p class="text-sm text-gray-300">Bowler</p>
+                    </div>
+                </a>
+                <!-- Player Card 7 - Ambati Rayudu -->
+                <a href="player.html?id=7" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Ambati+Rayudu" alt="Ambati Rayudu" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Ambati Rayudu</h3>
+                        <p class="text-sm text-gray-300">Batsman</p>
+                    </div>
+                </a>
+                <!-- Player Card 8 - Shivam Dube -->
+                <a href="player.html?id=8" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Shivam+Dube" alt="Shivam Dube" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Shivam Dube</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+                <!-- Player Card 9 - Ben Stokes -->
+                <a href="player.html?id=9" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Ben+Stokes" alt="Ben Stokes" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Ben Stokes</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+                <!-- Player Card 10 - Ajinkya Rahane -->
+                <a href="player.html?id=10" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Ajinkya+Rahane" alt="Ajinkya Rahane" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Ajinkya Rahane</h3>
+                        <p class="text-sm text-gray-300">Batsman</p>
+                    </div>
+                </a>
+                <!-- Player Card 11 - Simarjeet Singh -->
+                <a href="player.html?id=11" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Simarjeet+Singh" alt="Simarjeet Singh" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Simarjeet Singh</h3>
+                        <p class="text-sm text-gray-300">Bowler</p>
+                    </div>
+                </a>
+                <!-- Player Card 12 - Tushar Deshpande -->
+                <a href="player.html?id=12" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Tushar+Deshpande" alt="Tushar Deshpande" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Tushar Deshpande</h3>
+                        <p class="text-sm text-gray-300">Bowler</p>
+                    </div>
+                </a>
+                <!-- Player Card 13 - Maheesh Theekshana -->
+                <a href="player.html?id=13" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Maheesh+Theekshana" alt="Maheesh Theekshana" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Maheesh Theekshana</h3>
+                        <p class="text-sm text-gray-300">Bowler</p>
+                    </div>
+                </a>
+                <!-- Player Card 14 - Dwaine Pretorius -->
+                <a href="player.html?id=14" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Dwaine+Pretorius" alt="Dwaine Pretorius" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Dwaine Pretorius</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+                <!-- Player Card 15 - Mitchell Santner -->
+                <a href="player.html?id=15" class="player-card bg-[#2a2a44] rounded-2xl shadow-xl overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/400x400/fecb00/000000?text=Mitchell+Santner" alt="Mitchell Santner" class="w-full h-40 object-cover">
+                    <div class="p-4 text-center">
+                        <h3 class="text-lg font-bold text-white mb-1">Mitchell Santner</h3>
+                        <p class="text-sm text-gray-300">All-rounder</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- View All Players Button -->
+            <div class="text-center mt-8">
+                <button id="view-more-button"
+                    class="bg-[#fecb00] text-[#1a1a2e] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#ffdf6c] transition-transform duration-300 transform hover:scale-105 shadow-lg">
+                    View All Players
+                </button>
+            </div>
+        </section>
+
+        <!-- Stats Section (Placeholder) -->
+        <section id="stats" class="py-16 md:py-24 text-center fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#fecb00] mb-8">Team Statistics</h2>
+            <div class="max-w-4xl mx-auto bg-[#2a2a44] p-8 rounded-2xl shadow-xl">
+                <p class="text-lg text-gray-300 mb-4">
+                    Team stats and records will be displayed here, showcasing top performers and achievements.
+                </p>
+                <!-- This is where you could add charts or more detailed tables -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-4 bg-[#3a3a5e] rounded-lg">
+                        <p class="text-4xl font-bold text-[#fecb00]">5</p>
+                        <p class="text-gray-400">IPL Trophies</p>
+                    </div>
+                    <div class="p-4 bg-[#3a3a5e] rounded-lg">
+                        <p class="text-4xl font-bold text-[#fecb00]">10</p>
+                        <p class="text-gray-400">Playoff Appearances</p>
+                    </div>
+                    <div class="p-4 bg-[#3a3a5e] rounded-lg">
+                        <p class="text-4xl font-bold text-[#fecb00]">60%</p>
+                        <p class="text-gray-400">Win Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section (Placeholder) -->
+        <section id="news" class="py-16 md:py-24 text-center fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#fecb00] mb-8">Latest News</h2>
+            <div class="max-w-4xl mx-auto bg-[#2a2a44] p-8 rounded-2xl shadow-xl">
+                <p class="text-lg text-gray-300 mb-4">
+                    Stay up-to-date with the latest team news, player updates, and match analysis here.
+                </p>
+                <div class="space-y-4">
+                    <div class="p-4 bg-[#3a3a5e] rounded-lg text-left">
+                        <h4 class="font-bold text-white">Dhoni Hits the Nets for Practice Session</h4>
+                        <p class="text-sm text-gray-400 mt-1">April 25, 2024</p>
+                    </div>
+                    <div class="p-4 bg-[#3a3a5e] rounded-lg text-left">
+                        <h4 class="font-bold text-white">CSK Signs New Overseas Player for Upcoming Season</h4>
+                        <p class="text-sm text-gray-400 mt-1">April 20, 2024</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fan Zone Section -->
+        <section id="fan-zone" class="py-16 md:py-24 text-center fade-in-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#fecb00] mb-8">Fan Zone</h2>
+            <div class="max-w-xl mx-auto bg-[#2a2a44] p-8 md:p-12 rounded-2xl shadow-xl">
+                <h3 class="text-2xl font-bold text-white mb-6">Who is your favorite CSK player of all time?</h3>
+                <div id="poll-options" class="space-y-4">
+                    <button class="poll-button w-full bg-[#3a3a5e] text-white py-3 rounded-lg hover:bg-[#4a4a6e] transition-colors duration-200">MS Dhoni</button>
+                    <button class="poll-button w-full bg-[#3a3a5e] text-white py-3 rounded-lg hover:bg-[#4a4a6e] transition-colors duration-200">Suresh Raina</button>
+                    <button class="poll-button w-full bg-[#3a3a5e] text-white py-3 rounded-lg hover:bg-[#4a4a6e] transition-colors duration-200">Ravindra Jadeja</button>
+                    <button class="poll-button w-full bg-[#3a3a5e] text-white py-3 rounded-lg hover:bg-[#4a4a6e] transition-colors duration-200">Dwayne Bravo</button>
+                </div>
+                <div id="poll-results" class="mt-8 hidden">
+                    <h3 class="text-2xl font-bold text-white mb-4">Poll Results</h3>
+                    <div id="results-display" class="space-y-3"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2a2a44] py-8 mt-12 text-center text-gray-400">
+        <p>&copy; 2024 CSK Fan Hub. All Rights Reserved.</p>
+        <p class="mt-2 text-sm">Made with passion by a fan.</p>
+    </footer>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Poll logic
+        const pollOptions = document.getElementById('poll-options');
+        const pollResults = document.getElementById('poll-results');
+        const resultsDisplay = document.getElementById('results-display');
+        
+        let votes = {}; // Object to store vote counts
+        const pollButtons = document.querySelectorAll('.poll-button');
+
+        pollButtons.forEach(button => {
+            // Initialize votes
+            votes[button.textContent] = 0;
+
+            button.addEventListener('click', () => {
+                // Increment vote for the clicked option
+                votes[button.textContent]++;
+                
+                // Hide poll options and show results
+                pollOptions.classList.add('hidden');
+                pollResults.classList.remove('hidden');
+                
+                // Render the results
+                renderPollResults();
+            });
+        });
+
+        function renderPollResults() {
+            resultsDisplay.innerHTML = '';
+            
+            // Calculate total votes
+            const totalVotes = Object.values(votes).reduce((sum, current) => sum + current, 0);
+
+            for (const option in votes) {
+                const voteCount = votes[option];
+                const percentage = totalVotes > 0 ? (voteCount / totalVotes) * 100 : 0;
+                
+                const resultBar = document.createElement('div');
+                resultBar.classList.add('flex', 'items-center', 'space-x-3');
+                
+                resultBar.innerHTML = `
+                    <div class="w-full h-8 bg-[#3a3a5e] rounded-full relative">
+                        <div class="h-full bg-[#fecb00] rounded-full transition-all duration-500 ease-out"
+                            style="width: ${percentage.toFixed(0)}%;"></div>
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-white font-semibold">${option}</span>
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-white font-semibold text-sm">${voteCount} (${percentage.toFixed(0)}%)</span>
+                    </div>
+                `;
+                resultsDisplay.appendChild(resultBar);
+            }
+        }
+        
+        // Logic for "View All Players" button
+        const viewMoreButton = document.getElementById('view-more-button');
+        const hiddenPlayersContainer = document.getElementById('hidden-players-container');
+
+        viewMoreButton.addEventListener('click', () => {
+            // This is the correct way to show the hidden elements
+            hiddenPlayersContainer.classList.remove('hidden');
+            // This hides the button after it's been clicked
+            viewMoreButton.style.display = 'none';
+        });
+
+        // Scroll-based fade-in animation
+        const sections = document.querySelectorAll('.fade-in-section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

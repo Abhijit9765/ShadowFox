@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Details - CSK Fan Hub</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Apply the Inter font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #1a1a2e;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="bg-[#1a1a2e] flex flex-col min-h-screen">
+
+    <!-- Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-[#1a1a2e] bg-opacity-90 backdrop-blur-sm shadow-md py-4">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="index.html" class="flex items-center space-x-2 text-2xl font-bold text-[#fecb00] drop-shadow-lg">
+                <img src="https://placehold.co/50x50/fecb00/000000?text=CSK" alt="Team Logo" class="w-10 h-10 rounded-full">
+                <span>CSK Fan Hub</span>
+            </a>
+            <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300 font-medium">Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 flex-grow py-16">
+        <div id="player-details-container" class="bg-[#2a2a44] p-8 md:p-12 rounded-2xl shadow-xl max-w-4xl mx-auto">
+            <!-- Player details will be dynamically injected here by JavaScript -->
+            <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left mb-8 md:mb-12">
+                <img id="player-photo" src="" alt="Player Photo" class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full mx-auto md:mr-12 mb-6 md:mb-0 border-4 border-[#fecb00] shadow-lg">
+                <div>
+                    <h1 id="player-name" class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-2"></h1>
+                    <p id="player-role" class="text-xl text-gray-300 mb-4"></p>
+                    <p id="player-bio" class="text-base text-gray-400 leading-relaxed"></p>
+                </div>
+            </div>
+
+            <!-- IPL Career Stats Section -->
+            <div class="mt-12">
+                <h2 class="text-3xl font-bold text-center text-[#fecb00] mb-8">IPL Career Statistics</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-left text-gray-300 bg-[#3a3a5e] rounded-lg">
+                        <thead class="bg-[#4a4a6e]">
+                            <tr>
+                                <th class="px-4 py-3 font-medium text-white">Category</th>
+                                <th class="px-4 py-3 font-medium text-white">Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-700">
+                                <td class="px-4 py-3 font-semibold">Matches</td>
+                                <td id="stats-matches" class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="px-4 py-3 font-semibold">Runs</td>
+                                <td id="stats-runs" class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="px-4 py-3 font-semibold">Wickets</td>
+                                <td id="stats-wickets" class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="px-4 py-3 font-semibold">Highest Score</td>
+                                <td id="stats-highest-score" class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="px-4 py-3 font-semibold">Centuries</td>
+                                <td id="stats-centuries" class="px-4 py-3"></td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 font-semibold">Fifties</td>
+                                <td id="stats-fifties" class="px-4 py-3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2a2a44] py-8 mt-12 text-center text-gray-400">
+        <p>&copy; 2024 CSK Fan Hub. All Rights Reserved.</p>
+        <p class="mt-2 text-sm">Made with passion by a fan.</p>
+    </footer>
+
+    <!-- JavaScript for dynamic content -->
+    <script>
+        // Full player data with detailed stats
+        const playersData = [
+            { id: 1, name: "MS Dhoni", role: "Wicket-keeper / Batsman", bio: "Mahendra Singh Dhoni, affectionately known as 'Thala,' is a legendary Indian cricketer and the beloved captain of the Chennai Super Kings. Known for his calm demeanor, powerful finishing skills, and strategic genius, he has led CSK to multiple IPL victories and is considered one of the greatest captains in the history of the sport.", photo: "https://documents.iplt20.com/ipl/IPLHeadshot2024/57.png", stats: { matches: 250, runs: 5082, wickets: 0, highestScore: 84, centuries: 0, fifties: 24 } },
+            { id: 2, name: "Ravindra Jadeja", role: "All-rounder", bio: "Sir Ravindra Jadeja is a dynamic Indian all-rounder, celebrated for his exceptional left-arm spin bowling, explosive batting, and world-class fielding. He is a key pillar of the CSK team, consistently delivering match-winning performances with both bat and ball.", photo: "https://placehold.co/400x400/fecb00/000000?text=Ravindra+Jadeja", stats: { matches: 226, runs: 2692, wickets: 152, highestScore: 62, centuries: 0, fifties: 2 } },
+            { id: 3, name: "Devon Conway", role: "Batsman", bio: "Devon Conway is a prolific New Zealand batsman who has become a vital part of the CSK opening lineup. His elegant and consistent stroke play provides a strong foundation for the team's innings.", photo: "https://placehold.co/400x400/fecb00/000000?text=Devon+Conway", stats: { matches: 23, runs: 924, wickets: 0, highestScore: 92, centuries: 0, fifties: 9 } },
+            { id: 4, name: "Moeen Ali", role: "All-rounder", bio: "Moeen Ali is a stylish English all-rounder. He is known for his aggressive batting, deceptive off-spin bowling, and his ability to change the momentum of a game.", photo: "https://placehold.co/400x400/fecb00/000000?text=Moeen+Ali", stats: { matches: 52, runs: 1032, wickets: 33, highestScore: 93, centuries: 0, fifties: 5 } },
+            { id: 5, name: "Ruturaj Gaikwad", role: "Batsman", bio: "Ruturaj Gaikwad is a promising young Indian batsman who has become a consistent run-scorer for CSK. His classical technique and calm temperament make him a player to watch for the future.", photo: "https://placehold.co/400x400/fecb00/000000?text=Ruturaj+Gaikwad", stats: { matches: 52, runs: 1797, wickets: 0, highestScore: 101, centuries: 1, fifties: 14 } },
+            { id: 6, name: "Deepak Chahar", role: "Bowler", bio: "Deepak Chahar is an Indian medium-fast bowler renowned for his ability to swing the ball both ways. He is a dangerous new-ball bowler and has a knack for taking early wickets.", photo: "https://placehold.co/400x400/fecb00/000000?text=Deepak+Chahar", stats: { matches: 75, runs: 139, wickets: 71, highestScore: 54, centuries: 0, fifties: 1 } },
+            { id: 7, name: "Ambati Rayudu", role: "Batsman", bio: "Ambati Rayudu is a dependable middle-order batsman known for his aggressive hitting and ability to stabilize the innings under pressure.", photo: "https://placehold.co/400x400/fecb00/000000?text=Ambati+Rayudu", stats: { matches: 203, runs: 4348, wickets: 0, highestScore: 100, centuries: 1, fifties: 22 } },
+            { id: 8, name: "Shivam Dube", role: "All-rounder", bio: "Shivam Dube is a powerful all-rounder, capable of hitting big sixes and providing useful medium-pace bowling. He adds great depth to the CSK squad.", photo: "https://placehold.co/400x400/fecb00/000000?text=Shivam+Dube", stats: { matches: 50, runs: 1076, wickets: 4, highestScore: 95, centuries: 0, fifties: 7 } },
+            { id: 9, name: "Ben Stokes", role: "All-rounder", bio: "Ben Stokes is a world-class English all-rounder and one of the most impactful players in modern cricket. He is known for his aggressive style and ability to perform under high pressure.", photo: "https://placehold.co/400x400/fecb00/000000?text=Ben+Stokes", stats: { matches: 43, runs: 935, wickets: 28, highestScore: 107, centuries: 2, fifties: 2 } },
+            { id: 10, name: "Ajinkya Rahane", role: "Batsman", bio: "Ajinkya Rahane is a technically sound top-order batsman. He is a versatile player who can adapt to various formats of the game and provide stability.", photo: "https://placehold.co/400x400/fecb00/000000?text=Ajinkya+Rahane", stats: { matches: 172, runs: 4426, wickets: 1, highestScore: 105, centuries: 2, fifties: 29 } },
+            { id: 11, name: "Simarjeet Singh", role: "Bowler", bio: "Simarjeet Singh is a young Indian fast-medium bowler. He has shown great potential and is a promising talent for the future of Indian cricket.", photo: "https://placehold.co/400x400/fecb00/000000?text=Simarjeet+Singh", stats: { matches: 6, runs: 0, wickets: 4, highestScore: 0, centuries: 0, fifties: 0 } },
+            { id: 12, name: "Tushar Deshpande", role: "Bowler", bio: "Tushar Deshpande is a right-arm medium-fast bowler. He is a valuable asset to the team, especially in the death overs, with his ability to bowl accurate yorkers.", photo: "https://placehold.co/400x400/fecb00/000000?text=Tushar+Deshpande", stats: { matches: 29, runs: 16, wickets: 24, highestScore: 9, centuries: 0, fifties: 0 } },
+            { id: 13, name: "Maheesh Theekshana", role: "Bowler", bio: "Maheesh Theekshana is a Sri Lankan mystery spinner. His unique action and variety of deliveries make him a difficult bowler to score off, especially in the middle overs.", photo: "https://placehold.co/400x400/fecb00/000000?text=Maheesh+Theekshana", stats: { matches: 21, runs: 0, wickets: 23, highestScore: 0, centuries: 0, fifties: 0 } },
+            { id: 14, name: "Dwaine Pretorius", role: "All-rounder", bio: "Dwaine Pretorius is a South African all-rounder known for his strong hitting and his right-arm medium-fast bowling. He is a great finisher with the bat.", photo: "https://placehold.co/400x400/fecb00/000000?text=Dwaine+Pretorius", stats: { matches: 10, runs: 62, wickets: 13, highestScore: 29, centuries: 0, fifties: 0 } },
+            { id: 15, name: "Mitchell Santner", role: "All-rounder", bio: "Mitchell Santner is a New Zealand all-rounder. He bowls left-arm orthodox spin and is a handy lower-order batsman, providing balance to the team.", photo: "https://placehold.co/400x400/fecb00/000000?text=Mitchell+Santner", stats: { matches: 15, runs: 96, wickets: 10, highestScore: 22, centuries: 0, fifties: 0 } },
+        ];
+        
+        // Function to get the query parameter from the URL
+        const getParameterByName = (name, url = window.location.href) => {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        };
+        
+        // Get the player ID from the URL
+        const playerId = parseInt(getParameterByName('id'));
+        
+        // Find the player data
+        const player = playersData.find(p => p.id === playerId);
+        
+        // If player is found, populate the page
+        if (player) {
+            document.getElementById('player-name').textContent = player.name;
+            document.getElementById('player-role').textContent = player.role;
+            document.getElementById('player-bio').textContent = player.bio;
+            document.getElementById('player-photo').src = player.photo;
+            
+            // Populate stats table
+            document.getElementById('stats-matches').textContent = player.stats.matches;
+            document.getElementById('stats-runs').textContent = player.stats.runs;
+            document.getElementById('stats-wickets').textContent = player.stats.wickets;
+            document.getElementById('stats-highest-score').textContent = player.stats.highestScore;
+            document.getElementById('stats-centuries').textContent = player.stats.centuries;
+            document.getElementById('stats-fifties').textContent = player.stats.fifties;
+        } else {
+            // Handle case where player is not found
+            document.getElementById('player-details-container').innerHTML = `
+                <div class="text-center p-8">
+                    <h1 class="text-3xl font-bold text-red-500 mb-4">Player Not Found</h1>
+                    <p class="text-gray-400">The player you are looking for does not exist.</p>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
